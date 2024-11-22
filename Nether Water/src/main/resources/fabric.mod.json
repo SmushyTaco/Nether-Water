@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "nether_water",
+  "version": "${version}",
+  "name": "Nether Water",
+  "description": "This mod allows you to place water in the nether!",
+  "authors": [
+    "SmushyTaco"
+  ],
+  "contact": {
+    "homepage": "https://www.smushytaco.com/",
+    "issues": "https://www.curseforge.com/minecraft/mc-mods/nether-water/issues/",
+    "sources": "https://github.com/SmushyTaco/Nether-Water/"
+  },
+  "license": "GNU Lesser General Public License version 3 (LGPLv3)",
+  "icon": "assets/nether_water/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      {
+        "adapter": "kotlin",
+        "value": "com.smushytaco.nether_water.NetherWater"
+      }
+    ],
+    "modmenu": [
+      "com.smushytaco.nether_water.configuration_support.ModMenuIntegration"
+    ]
+  },
+  "mixins": [
+    "nether_water.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${fabricloader}",
+    "fabric-api": ">=${fabric_api}",
+    "fabric-language-kotlin": ">=${fabric_language_kotlin}",
+    "minecraft": ">=${minecraft}",
+    "java": ">=${java}",
+    "cloth-config2": ">=${clothconfig}"
+  },
+  "suggests": {
+    "modmenu": ">=${modmenu}"
+  }
+}

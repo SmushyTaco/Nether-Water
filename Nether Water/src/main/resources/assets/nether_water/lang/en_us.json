@@ -1,0 +1,7 @@
+{
+  "text.autoconfig.nether_water.title": "Nether Water Configuration",
+  "text.autoconfig.nether_water.option.enableNetherWater": "Enable Nether Water",
+  "text.autoconfig.nether_water.option.allowWaterEverywhere": "Allow Water Everywhere",
+  "text.autoconfig.nether_water.option.maximumWaterHeight": "Maximum Water Height",
+  "text.autoconfig.nether_water.option.minimumWaterHeight": "Minimum Water Height"
+}
