@@ -1,0 +1,11 @@
+{
+  "required": true,
+  "package": "com.smushytaco.nether_water.mixin",
+  "compatibilityLevel": "JAVA_${java}",
+  "mixins": [
+    "WaterTweaks"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
