@@ -1,21 +1,9 @@
 package com.smushytaco.nether_water
-import com.smushytaco.nether_water.configuration_support.ModConfiguration
-import me.shedaniel.autoconfig.AutoConfig
-import me.shedaniel.autoconfig.ConfigHolder
-import me.shedaniel.autoconfig.annotation.Config
-import me.shedaniel.autoconfig.serializer.GsonConfigSerializer
 import net.fabricmc.api.ModInitializer
 object NetherWater : ModInitializer {
     const val MOD_ID = "nether_water"
-    private lateinit var configHolder: ConfigHolder<ModConfiguration>
-    private lateinit var config: ModConfiguration
-    override fun onInitialize() {
-        AutoConfig.register(ModConfiguration::class.java) { definition: Config, configClass: Class<ModConfiguration> ->
-            GsonConfigSerializer(definition, configClass)
-        }
-        configHolder = AutoConfig.getConfigHolder(ModConfiguration::class.java)
-        config = configHolder.config
-    }
+    private val config = ModConfig.createAndLoad()
+    override fun onInitialize() {}
     fun canHaveWater(y: Int): Boolean {
         if (!config.enableNetherWater) return false
         if (config.allowWaterEverywhere) return true
@@ -23,7 +11,7 @@ object NetherWater : ModInitializer {
             config.minimumWaterHeight = config.minimumWaterHeight xor config.maximumWaterHeight
             config.maximumWaterHeight = config.minimumWaterHeight xor config.maximumWaterHeight
             config.minimumWaterHeight = config.minimumWaterHeight xor config.maximumWaterHeight
-            configHolder.save()
+            config.save()
         }
         if (y in config.minimumWaterHeight .. config.maximumWaterHeight) return true
         return false
