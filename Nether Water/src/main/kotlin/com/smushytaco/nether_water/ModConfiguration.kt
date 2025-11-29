@@ -1,5 +1,6 @@
 package com.smushytaco.nether_water
-import io.wispforest.owo.config.annotation.*
+import io.wispforest.owo.config.annotation.Config
+import io.wispforest.owo.config.annotation.Modmenu
 @Modmenu(modId = NetherWater.MOD_ID)
 @Config(name = NetherWater.MOD_ID, wrapperName = "ModConfig")
 @Suppress("UNUSED")
